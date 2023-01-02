@@ -10,7 +10,7 @@ public class SmoothCam : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         Vector3 movePosition = target.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity,dampling);
