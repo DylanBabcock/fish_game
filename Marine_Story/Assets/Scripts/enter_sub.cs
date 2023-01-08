@@ -10,6 +10,7 @@ public class enter_sub : MonoBehaviour
     private bool isInsideVehicle;
     private SpriteRenderer spriteRenderer;
     public float enterDistance = 2.0f;
+    public GameObject target;//text object 
 
    void Start()
     {
@@ -28,7 +29,8 @@ public class enter_sub : MonoBehaviour
             }
             else
             {
-                
+                Destroy(target);// removes the text from screen
+
                 spriteRenderer.enabled = false;
 
                 EnterVehicle();
