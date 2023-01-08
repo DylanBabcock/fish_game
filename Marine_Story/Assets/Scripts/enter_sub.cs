@@ -8,7 +8,13 @@ public class enter_sub : MonoBehaviour
     public GameObject vehicle;
 
     private bool isInsideVehicle;
+    private SpriteRenderer spriteRenderer;
 
+   void Start()
+    {
+        // Get the player's sprite renderer component
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -16,9 +22,13 @@ public class enter_sub : MonoBehaviour
             if (isInsideVehicle)
             {
                 ExitVehicle();
+                spriteRenderer.enabled = true;
             }
             else
             {
+                
+                spriteRenderer.enabled = false;
+
                 EnterVehicle();
             }
         }
