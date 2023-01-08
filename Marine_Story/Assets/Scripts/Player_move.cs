@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // movement variables
     public float moveSpeed = 5f;
+    public Transform originalParent;
 
     // reference to the character's Rigidbody2D component
     private Rigidbody2D rb;
