@@ -9,6 +9,7 @@ public class enter_sub : MonoBehaviour
 
     private bool isInsideVehicle;
     private SpriteRenderer spriteRenderer;
+    public float enterDistance = 2.0f;
 
    void Start()
     {
@@ -17,7 +18,8 @@ public class enter_sub : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        float distance = Vector3.Distance(player.transform.position, vehicle.transform.position); // calc the distance between vehicle and player
+        if (Input.GetKeyDown(KeyCode.E) && distance <= enterDistance)
         {
             if (isInsideVehicle)
             {
